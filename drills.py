@@ -37,10 +37,15 @@ def sigmoid_test():
     """
     Learn good practice to set up test code.
     """
-    input = [1, 2, 3]
+    input = np.array([1, 2, 3])
     output = [0.73105858,  0.88079708,  0.95257413]
+
+    print(sigmoid(input))
+    print(output)
 
     assert sigmoid(input) == output
 
+    print("Sigmoid OK")
 
-sigmoid_test
+
+sigmoid_test()
