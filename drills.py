@@ -11,8 +11,7 @@ import numpy as np
 
 
 def sigmoid(x):
-    """
-    Returns the sigmoid of a number.
+    """Returns the sigmoid of a number.
 
     This is a non-linear
     function also known as the logistic function.
@@ -34,7 +33,8 @@ def sigmoid(x):
 
 
 def sigmoid_derivative(x):
-    """
+    """Get the gradient of x.
+
     Compute the gradient (otherwise known as the slope or derivative) 
     of the sigmoid function with respect to it´s input x.
 
@@ -50,8 +50,7 @@ def sigmoid_derivative(x):
 
 
 def image2vec(x):
-    """
-    Convert an image to a vector.
+    """Convert an image to a vector.
 
     Reshape the image array into a one
     dimensional vector.
@@ -65,6 +64,22 @@ def image2vec(x):
     xv = x.reshape(x.shape[0] * x.shape[1] * x.shape[2], 1)
 
     return xv
+
+
+def normalize_rows(x):
+    """Normalize rows.
+
+    Args: 
+        x: A numpy matrix of shape (n, m)
+
+    Returns:
+     xn: The normalized (by row) numpy matrix.
+    """
+    x_norm = np.linalg.norm(x, ord=2, axis=1, keepdims=True)
+
+    xn = x / x_norm
+
+    return xn
 
 
 def sigmoid_test():
