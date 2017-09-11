@@ -82,6 +82,24 @@ def normalize_rows(x):
     return xn
 
 
+def softmax(x):
+    """Use a softmax function on x.
+
+    Args:
+        x: A numpy matrix of shape (n,m)
+
+    Returns:
+        xs: A numpy matrix equal to the softmax of x, of shape (n,m)
+    """
+    x_exp = np.exp(x)
+
+    x_sum = np.sum(x_exp, axis = 1, keepdims = True)
+
+    xs = x_exp / x_sum
+
+    return xs
+
+
 def sigmoid_test():
     """
     Learn good practice to set up test code.
