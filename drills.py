@@ -28,7 +28,7 @@ def sigmoid(x):
     Return:
         s: sigmoid(x)
     """
-    s = 1 / (1 + np.exp(x*-1))
+    s = 1 / (1 + np.exp(x * -1))
 
     return s
 
@@ -49,27 +49,45 @@ def sigmoid_derivative(x):
     return ds
 
 
+def image2vec(x):
+    """
+    Convert an image to a vector.
+
+    Reshape the image array into a one
+    dimensional vector.
+
+    Args:
+        x: A numpy array of shape (length, height, depth).
+    Returns:
+        xv: A vector of shape (length*height*depth, 1).
+    """
+
+    xv = x.reshape(x.shape[0] * x.shape[1] * x.shape[2], 1)
+
+    return xv
+
+
 def sigmoid_test():
     """
     Learn good practice to set up test code.
     """
-    input = np.array([1, 2, 3])
+    input_x = np.array([1, 2, 3])
     output = np.array([0.73105858,  0.88079708,  0.95257413])
 
-    print(sigmoid(input))
+    print(sigmoid(input_x))
     print(output)
 
     assert sigmoid(input) == output
-
-    print("Sigmoid OK")
 
 
 def sigmoid_derivative_test():
     """
     Implement better docstring!!!
     """
-    input = np.array([1, 2, 3])
+    input_x = np.array([1, 2, 3])
     output = np.array([0.19661193, 0.10499359, 0.04517666])
+
+    assert sigmoid_derivative(input_x) == output
 
 
 sigmoid_test()
