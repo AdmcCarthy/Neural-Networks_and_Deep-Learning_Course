@@ -135,6 +135,17 @@ def image2vec_test():
                       [ 0.34144279] [ 0.94630077]]
                       )
 
+    
+def normalize_rows_test():
+    """
+    Implement docstring.
+    """
+    input_x = np.array([
+                        [0, 3, 4],
+                        [1, 6, 4]])
+    output = np.array([[0., 0.6, 0.8], 
+                       [0.13736056, 0.82416338, 0.54944226]])
 
+s
 sigmoid_test()
 sigmoid_derivative_test()
