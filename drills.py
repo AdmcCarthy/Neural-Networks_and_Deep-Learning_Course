@@ -23,7 +23,7 @@ def sigmoid(x):
     real numbers numpy is used.
 
     Args:
-        x: A scalar
+        x: A scalar or numpy array.
 
     Return:
         s: sigmoid(x)
@@ -31,6 +31,22 @@ def sigmoid(x):
     s = 1 / (1 + np.exp(x*-1))
 
     return s
+
+
+def sigmoid_derivative(x):
+    """
+    Compute the gradient (otherwise known as the slope or derivative) 
+    of the sigmoid function with respect to it´s input x.
+
+    Args:
+        x: A scalar or numpy array,
+
+    Returns:
+        ds: The computed gradient.
+    """
+    ds = sigmoid(x) * (1 - sigmoid(x))
+
+    return ds
 
 
 def sigmoid_test():
