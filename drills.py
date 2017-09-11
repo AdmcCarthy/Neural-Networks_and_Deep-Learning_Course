@@ -54,7 +54,7 @@ def sigmoid_test():
     Learn good practice to set up test code.
     """
     input = np.array([1, 2, 3])
-    output = [0.73105858,  0.88079708,  0.95257413]
+    output = np.array([0.73105858,  0.88079708,  0.95257413])
 
     print(sigmoid(input))
     print(output)
@@ -64,4 +64,13 @@ def sigmoid_test():
     print("Sigmoid OK")
 
 
+def sigmoid_derivative_test():
+    """
+    Implement better docstring!!!
+    """
+    input = np.array([1, 2, 3])
+    output = np.array([0.19661193, 0.10499359, 0.04517666])
+
+
 sigmoid_test()
+sigmoid_derivative_test()
