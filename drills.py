@@ -186,7 +186,7 @@ def image2vec_test():
                       [ 0.34144279] [ 0.94630077]]
                       )
 
-    
+
 def normalize_rows_test():
     """
     Implement docstring.
