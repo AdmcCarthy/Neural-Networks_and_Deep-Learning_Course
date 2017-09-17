@@ -101,6 +101,36 @@ def softmax(x):
     return xs
 
 
+def l_one_loss(y, yhat):
+    """Get L1 loss score.
+
+    Args:
+        y: vector of size m (predicted labels)
+        yhat: vector of size m (true labels)
+
+    Returns:
+        loss: L1 Loss
+    """
+    loss = np.sum(np.abs(y-yhat))
+
+    return loss
+
+
+def l_two_lost(y, yhat):
+    """Get L2 loss score.
+
+    Args:
+        y: vector of size m (predicted labels)
+        yhat: vector of size m (true labels)
+
+    Returns:
+        loss: L2 loss
+    """
+    loss = np.sum((y-yhat)**2)
+
+    return loss
+
+
 def vector_operations():
     """Practice typical vector operations
 
@@ -204,3 +234,13 @@ def softmax_test():
                         [7, 5, 0, 0 ,0]])
     ouput = np.array([[9.80897665e-01, 8.94462891e-04, 1.79657674e-02, 1.21052389e-04, 1.21052389e-04], 
                       [ 8.78679856e-01, 1.18916387e-01, 8.01252314e-04, 8.01252314e-04, 8.01252314e-04]])
+
+
+def loss_test():
+    """Test both loss functions.
+    """
+    yhat = np.array([.9, 0.2, 0.1, .4, .9])
+    y = np.array([1, 0, 0, 1, 1])
+
+    output_lone = 1.1
+    output_ltwo = 0.43
