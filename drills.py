@@ -70,7 +70,7 @@ def image2vec(x):
 def normalize_rows(x):
     """Normalize rows.
 
-    Args: 
+    Args:
         x: A numpy matrix of shape (n, m)
 
     Returns:
