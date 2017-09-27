@@ -47,3 +47,19 @@ def image2vec(x):
     xv = x.reshape(x.shape[0] * x.shape[1] * x.shape[2], 1)
 
     return xv
+
+
+def normalize_rows(x):
+    """Normalize rows.
+
+    Args:
+        x: A numpy matrix of shape (n, m)
+
+    Returns:
+     xn: The normalized (by row) numpy matrix.
+    """
+    x_norm = np.linalg.norm(x, ord=2, axis=1, keepdims=True)
+
+    xn = x / x_norm
+
+    return xn
