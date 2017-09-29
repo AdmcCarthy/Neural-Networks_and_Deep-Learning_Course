@@ -64,6 +64,7 @@ def normalize_rows(x):
 
     return xn
 
+
 def softmax(x):
     """Use a softmax function on x.
 
