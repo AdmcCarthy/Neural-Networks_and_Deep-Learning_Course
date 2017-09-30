@@ -81,3 +81,33 @@ def softmax(x):
     xs = x_exp / x_sum
 
     return xs
+
+
+def l_one_loss(y, yhat):
+    """Get L1 loss score.
+
+    Args:
+        y: vector of size m (predicted labels)
+        yhat: vector of size m (true labels)
+
+    Returns:
+        loss: L1 Loss
+    """
+    loss = np.sum(np.abs(y-yhat))
+
+    return loss
+
+
+def l_two_lost(y, yhat):
+    """Get L2 loss score.
+
+    Args:
+        y: vector of size m (predicted labels)
+        yhat: vector of size m (true labels)
+
+    Returns:
+        loss: L2 loss
+    """
+    loss = np.sum((y-yhat)**2)
+
+    return loss
