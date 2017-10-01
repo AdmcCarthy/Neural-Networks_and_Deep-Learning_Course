@@ -111,3 +111,58 @@ def l_two_lost(y, yhat):
     loss = np.sum((y-yhat)**2)
 
     return loss
+
+
+def vector_operations():
+    """Practice typical vector operations
+
+    """
+    x1 = [9, 2, 5, 0, 0, 7, 5, 0, 0, 0, 9, 2, 5, 0, 0]
+    x2 = [9, 2, 2, 9, 0, 9, 2, 5, 0, 0, 9, 2, 5, 0, 0]
+
+    # VECTORIZED DOT PRODUCT OF VECTORS
+    tic = time.process_time()
+    dot = np.dot(x1, x2)
+    toc = time.process_time()
+    print("dot = " + str(dot) + "\n ----- Computation time = " + str(1000*(toc - tic)) + "ms")
+
+    # VECTORIZED OUTER PRODUCT
+    tic = time.process_time()
+    outer = np.outer(x1, x2)
+    toc = time.process_time()
+    print("outer = " + str(outer) + "\n ----- Computation time = " + str(1000*(toc - tic)) + "ms")
+
+    # VECTORIZED ELEMENTWISE MULTIPLICATION
+    tic = time.process_time()
+    mul = np.multiply(x1, x2)
+    toc = time.process_time()
+    print("elementwise multiplication = " + str(mul) + "\n ----- Computation time = " + str(1000*(toc - tic)) + "ms")
+
+    # VECTORIZED GENERAL DOT PRODUCT
+    tic = time.process_time()
+    dot = np.dot(W, x1)
+    toc = time.process_time()
+    print("gdot = " + str(dot) + "\n ----- Computation time = " + str(1000*(toc - tic)) + "ms")
+
+
+def sigmoid_test():
+    """
+    Learn good practice to set up test code.
+    """
+    input_x = np.array([1, 2, 3])
+    output = np.array([0.73105858,  0.88079708,  0.95257413])
+
+    print(sigmoid(input_x))
+    print(output)
+
+    assert sigmoid(input) == output
+
+
+def sigmoid_derivative_test():
+    """
+    Implement better docstring!!!
+    """
+    input_x = np.array([1, 2, 3])
+    output = np.array([0.19661193, 0.10499359, 0.04517666])
+
+    assert sigmoid_derivative(input_x) == output
