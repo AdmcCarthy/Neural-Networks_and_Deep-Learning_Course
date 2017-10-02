@@ -143,26 +143,3 @@ def vector_operations():
     dot = np.dot(W, x1)
     toc = time.process_time()
     print("gdot = " + str(dot) + "\n ----- Computation time = " + str(1000*(toc - tic)) + "ms")
-
-
-def sigmoid_test():
-    """
-    Learn good practice to set up test code.
-    """
-    input_x = np.array([1, 2, 3])
-    output = np.array([0.73105858,  0.88079708,  0.95257413])
-
-    print(sigmoid(input_x))
-    print(output)
-
-    assert sigmoid(input) == output
-
-
-def sigmoid_derivative_test():
-    """
-    Implement better docstring!!!
-    """
-    input_x = np.array([1, 2, 3])
-    output = np.array([0.19661193, 0.10499359, 0.04517666])
-
-    assert sigmoid_derivative(input_x) == output
